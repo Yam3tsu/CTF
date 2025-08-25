@@ -6,4 +6,4 @@ I apologize if the exploits for the older challenges may be hard to read — thi
 
 I also apologize if I didn’t mention the CTFs from which the challenges were taken. This happens because, when publishing an old challenge, I might have forgotten which competition it came from. If the creators of a challenge would like to be credited, they can contact me and I will gladly update the repository.
 
-There are also many challenges that I unfortunately wasn’t able to publish. Some because I lost either the exploit or the challenge itself, and many others because they are part of the CyberChallenge.IT project or pwn.college, and therefore I cannot publish their solutions.
+There are also many challenges that I unfortunately wasn’t able to publish. Some because I lost either the exploit or the challenge itself, and many others because they are part of the CyberChallenge.IT project (Especially web challenges) or pwn.college, and therefore I cannot publish their solutions.
