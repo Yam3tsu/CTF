@@ -3,7 +3,9 @@
 The flag is stored as an environment variable. The challenge at start print all the environment variable except for the flag that is replaced with `FLAG=... Lets not print this one...`. It also mmap a fixed memory region rwx. Then the challenge take a shellcode as input and put it in the rwx region. Before executing the shellcode it sets a seccomp rule which disallow every syscall.
 
 ## Get the flag
-Before jumping to the shellcode the challenge set to 0 every register except for rbp and rsp. Luckly the environment variable are stored in the stack (as the variable envp). The problem is that to print the flag we need to use syscalls. To get the flag we can set up an oracle which allows us to bruteforce the flag one byte at a time. The challenge comes with a wrapper which notice us when the program crush so it's easy for us to detect a crush. To do that I used the following shellcode:
+Before jumping to the shellcode the challenge set to 0 every register except for rbp and rsp. Luckly the environment variable are stored in the stack (as the variable envp). So we can access the flag as offset of rbp. To get the flag offset in the env we can refer to the order in which they are printed at start.
+
+The problem is that to print the flag we need to use syscalls. To get the flag we can set up an oracle which allows us to bruteforce the flag one byte at a time. The challenge comes with a wrapper which notice us when the program crush so it's easy for us to detect a crush. To do that I used the following shellcode:
 ```x86asm
 mov rbx, QWORD PTR [rbp - {ENVP_OFFSET}]
 mov rax, rbx
