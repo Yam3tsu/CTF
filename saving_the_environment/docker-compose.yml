@@ -1,0 +1,11 @@
+services:
+  chall:
+    build: .
+    environment:
+      FLAG: snakeCTF{f4k3_fl4g_f0r_t3st1ng}
+
+      TIMEOUT: 20
+      EXEC: /app/run
+    ports:
+      - 1337:1337
+    privileged: true
